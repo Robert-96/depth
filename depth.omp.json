@@ -3,5 +3,27 @@
   "version": 3,
   "final_space": true,
   "blocks": [
+    {
+      "type": "prompt",
+      "segments": [
+        {
+          "type": "path",
+          "style": "folder",
+          "foreground": "blue",
+          "template": "[{{ .Path }}]"
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "segments": [
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "blue",
+          "template": "{{ .HEAD }} {{ .Status.String }}"
+        }        
+      ]
+    }
   ] 
 }
