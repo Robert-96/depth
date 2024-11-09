@@ -25,7 +25,7 @@
         {
           "type": "git",
           "style": "plain",
-          "foreground": "blue",
+          "foreground": "magenta",
           "properties": {
             "branch_max_length": 50,
             "branch_icon": "",
