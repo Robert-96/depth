@@ -4,25 +4,59 @@
   "final_space": true,
   "blocks": [
     {
-      "type": "prompt",
-      "segments": [
-        {
-          "type": "path",
-          "style": "folder",
-          "foreground": "blue",
-          "template": "[{{ .Path }}]"
-        }
-      ]
-    },
-    {
       "type": "rprompt",
+      "alignment": "right",
       "segments": [
         {
           "type": "git",
           "style": "plain",
           "foreground": "blue",
-          "template": "{{ .HEAD }} {{ .Status.String }}"
+          "properties": {
+            "source": "pwsh",
+            "fetch_status": true,
+            "display_status": true,
+            "branch_max_length": 50,
+            "branch_icon": "",
+            "branch_identical_icon": "",
+            "branch_ahead_icon": "",
+            "branch_behind_icon": "",
+            "branch_gone_icon": ""
+          },
+          "template": "{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Added }} <green>ADD</>{{end}}{{ if .Working.Deleted}} <red>DEL</{{ end }} {{ if .Working.Modified }} <yellow>MOD</>{{ end }}{{ if .Working.Untracked }} <magenta>UNT</>{{ end}}{{ if .Working.Unmerged }} <cyan>UNM</>{{ end }} [{{ .HEAD }}]"
         }        
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "magenta",
+          "template": "{{ if .Venv }}({{ .Venv }}){{ end }}"
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "blue",
+          "properties": {
+            "style": "folder"
+          },
+          "template": "[{{ .Path }}]"
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "green",
+          "foreground_templates": [
+            "{{ if eq .Code 0 }}green{{else}}red{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "template": " $"
+        }
       ]
     }
   ] 
