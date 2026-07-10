@@ -80,7 +80,7 @@ jobs:
       - name: Install oh-my-posh
         shell: pwsh
         run: |
-          winget install JanDeDobbeleer.OhMyPosh --source winget --accept-source-agreements --accept-package-agreements
+          Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))
 
           $ompCmd = Get-Command oh-my-posh -ErrorAction SilentlyContinue
           if (-not $ompCmd) {
