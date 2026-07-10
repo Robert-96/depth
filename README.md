@@ -8,10 +8,6 @@ A minimalist ohmyposh theme with git support. It displays pwd, status code and g
 
 ![depth theme screenshot](screenshots/depth.png)
 
-### depth.bash
-
-![depth bash theme screenshot](screenshots/depth.bash.png)
-
 ### depth.minimal
 
 ![depth minimal theme screenshot](screenshots/depth.minimal.png)
