@@ -59,7 +59,7 @@
 					"options": {
 						"always_enabled": true
 					},
-					"template": "{{ if or (eq .Shell \"pwsh\") (eq .Shell \"powershell\") (eq .Shell \"cmd\") }}>{{ else }}${{ end }}"
+					"template": "{{ .Shell }} {{ if or (eq .Shell \"pwsh\") (eq .Shell \"powershell\") (eq .Shell \"cmd\") }}>{{ else }}${{ end }}"
 				}
 			]
 		}
