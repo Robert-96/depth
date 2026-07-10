@@ -46,11 +46,10 @@ It is focused on fast signal and low noise:
       oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/Robert-96/depth/main/depth.omp.json' | Invoke-Expression
       ```
 
-    > [!NOTE]
-    > To use another variant, replace `depth.omp.json` in the command with either `depth.minimal.omp.json` or `depth.maximal.omp.json`.
-
 4. Restart your shell, or reload your profile.
 
+> [!NOTE]
+> To use another variant, replace `depth.omp.json` in the command with either `depth.minimal.omp.json` or `depth.maximal.omp.json`.
 
 ### Local File Option
 
