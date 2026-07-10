@@ -1,35 +1,64 @@
 # depth
 
-A minimalist ohmyposh theme with git support. It displays pwd, status code and git status &amp; branch.
+A minimalist Oh My Posh theme set with git support.
+
+It is focused on fast signal and low noise:
+
+- current path
+- command exit status
+- git branch and working tree status
+- optional python venv name
+
+## Theme Variants
+
+| Theme file | Style | Notes |
+| --- | --- | --- |
+| `depth.omp.json` | Balanced | Single-line prompt with git details in right prompt |
+| `depth.minimal.omp.json` | Compact | Single-line prompt with lightweight inline git branch |
+| `depth.maximal.omp.json` | Verbose | Multi-line prompt with agnoster path style and shell label |
 
 ## Install
 
 1. [oh-my-posh](https://ohmyposh.dev/docs/installation/linux) is required.
-2. Use one of these theme URLs from this repository:
+2. Choose a theme URL from this repository:
 
-- `https://raw.githubusercontent.com/Robert-96/depth/main/depth.omp.json`
-- `https://raw.githubusercontent.com/Robert-96/depth/main/depth.minimal.omp.json`
-- `https://raw.githubusercontent.com/Robert-96/depth/main/depth.maximal.omp.json`
+    - `https://raw.githubusercontent.com/Robert-96/depth/main/depth.omp.json`
+    - `https://raw.githubusercontent.com/Robert-96/depth/main/depth.minimal.omp.json`
+    - `https://raw.githubusercontent.com/Robert-96/depth/main/depth.maximal.omp.json`
 
-3. Initialize oh-my-posh in your shell config using the URL you want:
+3. Add the matching init command to your shell config.
 
-For zsh (`~/.zshrc`):
+    * zsh (`~/.zshrc`):
+
+      ```sh
+      eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/Robert-96/depth/main/depth.omp.json')"
+      ```
+
+    * bash (`~/.bashrc`):
+
+      ```sh
+      eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/Robert-96/depth/main/depth.omp.json')"
+      ```
+
+    * PowerShell (`$PROFILE`):
+
+      ```powershell
+      oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/Robert-96/depth/main/depth.omp.json' | Invoke-Expression
+      ```
+
+4. Restart your shell, or reload your profile.
+
+    To use another variant, replace `depth.omp.json` in the command with either `depth.minimal.omp.json` or `depth.maximal.omp.json`.
+
+### Local File Option
+
+If you prefer local files over remote URLs:
 
 ```sh
-eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/Robert-96/depth/main/depth.omp.json')"
+git clone https://github.com/Robert-96/depth.git
 ```
 
-For bash (`~/.bashrc`):
-
-```sh
-eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/Robert-96/depth/main/depth.omp.json')"
-```
-
-For PowerShell (`$PROFILE`):
-
-```powershell
-oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/Robert-96/depth/main/depth.omp.json' | Invoke-Expression
-```
+Then switch `--config` to a local path.
 
 ## Screenshots
 
