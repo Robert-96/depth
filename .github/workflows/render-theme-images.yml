@@ -40,8 +40,8 @@ jobs:
           shopt -s nullglob
 
           # Activate a virtual environment so venv-related prompt segments render in screenshots.
-          python -m venv .venv
-          source .venv/bin/activate
+          python -m venv .my-venv
+          source .my-venv/bin/activate
 
           themes=( *.omp.json )
           if [ ${#themes[@]} -eq 0 ]; then
