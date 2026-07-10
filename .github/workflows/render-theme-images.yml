@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - "*.omp.json"
+      - ".image.settings.json"
       - ".github/workflows/render-theme-images.yml"
 
 jobs:
