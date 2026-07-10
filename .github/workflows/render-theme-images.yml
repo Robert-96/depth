@@ -22,8 +22,10 @@ jobs:
 
       - name: Install oh-my-posh
         run: |
-          curl -s https://ohmyposh.dev/install.sh | bash -s -- -d "$HOME/.local/bin"
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          OMP_BIN="$GITHUB_WORKSPACE/bin"
+          mkdir -p "$OMP_BIN"
+          curl -s https://ohmyposh.dev/install.sh | bash -s -- -d "$OMP_BIN"
+          echo "$OMP_BIN" >> "$GITHUB_PATH"
 
       - name: Generate theme images
         shell: bash
