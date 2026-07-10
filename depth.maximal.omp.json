@@ -31,7 +31,7 @@
 					"type": "python",
 					"style": "plain",
 					"foreground": "yellow",
-					"template": "{{ if .Venv }}{{ \"{\" }}.{{ .Venv }}{{ \"}\" }} {{ end }}"
+					"template": "{{ if .Venv }}{{ \"{\" }}{{ .Venv }}{{ \"}\" }} {{ end }}"
 				},
 				{
 					"type": "path",
@@ -59,7 +59,7 @@
 					"options": {
 						"always_enabled": true
 					},
-					"template": " {{ if or (eq .Shell \"pwsh\") (eq .Shell \"powershell\") (eq .Shell \"cmd\") }}>{{ else }}${{ end }}"
+					"template": "{{ if or (eq .Shell \"pwsh\") (eq .Shell \"powershell\") (eq .Shell \"cmd\") }}>{{ else }}${{ end }}"
 				}
 			]
 		}
