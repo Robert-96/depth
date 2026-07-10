@@ -1,0 +1,54 @@
+name: Render Theme Images
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "*.omp.json"
+      - ".github/workflows/render-theme-images.yml"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install runtime dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y unzip fontconfig fonts-dejavu-core
+
+      - name: Install oh-my-posh
+        run: |
+          curl -s https://ohmyposh.dev/install.sh | bash -s -- -d "$HOME/.local/bin"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Generate theme images
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+
+          themes=( *.omp.json )
+          if [ ${#themes[@]} -eq 0 ]; then
+            echo "No .omp.json themes found in repository root"
+            exit 1
+          fi
+
+          mkdir -p out
+          for theme in "${themes[@]}"; do
+            base="${theme%.omp.json}"
+            echo "Rendering ${theme} -> out/${base}.png"
+            oh-my-posh config export image --config "$theme" --output "out/${base}.png"
+          done
+
+          ls -lah out
+
+      - name: Upload rendered images
+        uses: actions/upload-artifact@v4
+        with:
+          name: theme-images
+          path: out/*.png
+          if-no-files-found: error
