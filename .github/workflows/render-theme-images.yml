@@ -80,10 +80,15 @@ jobs:
       - name: Install oh-my-posh
         shell: pwsh
         run: |
-          $ompBin = Join-Path $env:GITHUB_WORKSPACE "bin"
-          New-Item -ItemType Directory -Path $ompBin -Force | Out-Null
-          Invoke-WebRequest -Uri "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-windows-amd64.exe" -OutFile (Join-Path $ompBin "oh-my-posh.exe")
-          "$ompBin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          winget install JanDeDobbeleer.OhMyPosh --source winget --accept-source-agreements --accept-package-agreements
+
+          $ompCmd = Get-Command oh-my-posh -ErrorAction SilentlyContinue
+          if (-not $ompCmd) {
+            Write-Error "oh-my-posh command not found after install"
+          }
+
+          $ompDir = Split-Path -Parent $ompCmd.Path
+          "$ompDir" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
       - name: Generate theme images (PowerShell)
         shell: pwsh
