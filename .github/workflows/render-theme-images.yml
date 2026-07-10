@@ -53,7 +53,7 @@ jobs:
           for theme in "${themes[@]}"; do
             base="${theme%.omp.json}"
             echo "Rendering ${theme} -> out/${base}.png"
-            bash -lc "oh-my-posh config export image --config \"$theme\" --output \"out/${base}.png\" --settings \"$HOME/.image.settings.json\""
+            oh-my-posh config export image --config "$theme" --output "out/${base}.png" --settings ~/.image.settings.json
           done
 
           ls -lah out
@@ -105,7 +105,7 @@ jobs:
             $base = $theme.Name -replace '\.omp\.json$', ''
             $output = Join-Path "out-windows" ("$base.pwsh.png")
             Write-Host "Rendering $($theme.Name) -> $output"
-            pwsh -NoLogo -NoProfile -Command "oh-my-posh config export image --config `"$($theme.FullName)`" --output `"$output`" --settings `".\\.image.settings.json`""
+            oh-my-posh config export image --config $theme.FullName --output $output --settings .\.image.settings.json
           }
 
           Get-ChildItem out-windows | Format-Table Name, Length, LastWriteTime
