@@ -1,31 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "version": 3,
+  "version": 4,
   "final_space": true,
   "blocks": [
-    {
-      "type": "rprompt",
-      "alignment": "right",
-      "segments": [
-        {
-          "type": "git",
-          "style": "plain",
-          "foreground": "blue",
-          "properties": {
-            "source": "pwsh",
-            "fetch_status": true,
-            "display_status": true,
-            "branch_max_length": 50,
-            "branch_icon": "",
-            "branch_identical_icon": "",
-            "branch_ahead_icon": "",
-            "branch_behind_icon": "",
-            "branch_gone_icon": ""
-          },
-          "template": "{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Added }} <green>ADD</>{{end}}{{ if .Working.Deleted}} <red>DEL</>{{ end }} {{ if .Working.Modified }} <yellow>MOD</>{{ end }}{{ if .Working.Untracked }} <magenta>UNT</>{{ end}}{{ if .Working.Unmerged }} <cyan>UNM</>{{ end }} [{{ .HEAD }}]"
-        }
-      ]
-    },
     {
       "type": "prompt",
       "alignment": "left",
@@ -56,6 +33,29 @@
             "always_enabled": true
           },
           "template": " $"
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "blue",
+          "properties": {
+            "source": "pwsh",
+            "fetch_status": true,
+            "display_status": true,
+            "branch_max_length": 50,
+            "branch_icon": "",
+            "branch_identical_icon": "",
+            "branch_ahead_icon": "",
+            "branch_behind_icon": "",
+            "branch_gone_icon": ""
+          },
+          "template": "{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Added }} <green>ADD</>{{end}}{{ if .Working.Deleted}} <red>DEL</>{{ end }} {{ if .Working.Modified }} <yellow>MOD</>{{ end }}{{ if .Working.Untracked }} <magenta>UNT</>{{ end}}{{ if .Working.Unmerged }} <cyan>UNM</>{{ end }} [{{ .HEAD }}]"
         }
       ]
     }
