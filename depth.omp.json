@@ -20,7 +20,7 @@
             "branch_behind_icon": "",
             "branch_gone_icon": ""
           },
-          "template": "{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Added }} <green>ADD</>{{end}}{{ if .Working.Deleted}} <red>DEL</{{ end }} {{ if .Working.Modified }} <yellow>MOD</>{{ end }}{{ if .Working.Untracked }} <magenta>UNT</>{{ end}}{{ if .Working.Unmerged }} <cyan>UNM</>{{ end }} [{{ .HEAD }}]"
+          "template": "{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Added }} <green>ADD</>{{end}}{{ if .Working.Deleted}} <red>DEL</>{{ end }} {{ if .Working.Modified }} <yellow>MOD</>{{ end }}{{ if .Working.Untracked }} <yellow>UNT</>{{ end}}{{ if .Working.Unmerged }} <cyan>UNM</>{{ end }} [{{ .HEAD }}]"
         }
       ]
     },
@@ -31,7 +31,7 @@
         {
           "type": "python",
           "style": "plain",
-          "foreground": "magenta",
+          "foreground": "yellow",
           "template": "{{ if .Venv }}({{ .Venv }}){{ end }}"
         },
         {
