@@ -43,7 +43,7 @@
         {
           "type": "git",
           "style": "plain",
-          "foreground": "blue",
+          "foreground": "magenta",
           "options": {
             "fetch_status": true,
             "branch_icon": "",
