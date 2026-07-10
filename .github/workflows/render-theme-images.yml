@@ -43,7 +43,7 @@ jobs:
           for theme in "${themes[@]}"; do
             base="${theme%.omp.json}"
             echo "Rendering ${theme} -> out/${base}.png"
-            oh-my-posh config export image --config "$theme" --output "out/${base}.png"
+            oh-my-posh config export image --config "$theme" --output "out/${base}.png" --settings ~/.image.settings.json
           done
 
           ls -lah out
