@@ -11,7 +11,7 @@
           "type": "python",
           "style": "plain",
           "foreground": "magenta",
-          "template": "{{ if .Venv }}({{ .Venv }}){{ end }} "
+          "template": "{{ if .Venv }}({{ .Venv }}) {{ end }} "
         },
         {
           "type": "path",
