@@ -16,6 +16,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
       - name: Install runtime dependencies
         run: |
           sudo apt-get update
@@ -33,6 +38,10 @@ jobs:
         run: |
           set -euo pipefail
           shopt -s nullglob
+
+          # Activate a virtual environment so venv-related prompt segments render in screenshots.
+          python -m venv .venv
+          source .venv/bin/activate
 
           themes=( *.omp.json )
           if [ ${#themes[@]} -eq 0 ]; then
