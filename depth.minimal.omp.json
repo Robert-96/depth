@@ -10,7 +10,7 @@
         {
           "type": "python",
           "style": "plain",
-          "foreground": "magenta",
+          "foreground": "yellow",
           "template": "{{ if .Venv }}({{ .Venv }}) {{ end }} "
         },
         {
