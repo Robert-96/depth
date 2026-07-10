@@ -74,3 +74,7 @@ Then switch `--config` to a local path.
 ### depth.maximal
 
 ![depth maximal theme screenshot](screenshots/depth.maximal.png)
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
