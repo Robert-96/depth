@@ -17,7 +17,7 @@
           "type": "path",
           "style": "plain",
           "foreground": "blue",
-          "properties": {
+          "options": {
             "style": "folder"
           },
           "template": "[{{ .Path }}]"
@@ -29,7 +29,7 @@
           "foreground_templates": [
             "{{ if eq .Code 0 }}green{{else}}red{{ end }}"
           ],
-          "properties": {
+          "options": {
             "always_enabled": true
           },
           "template": " $"
@@ -44,11 +44,9 @@
           "type": "git",
           "style": "plain",
           "foreground": "blue",
-          "properties": {
-            "source": "pwsh",
+          "options": {
+            "source": "cli",
             "fetch_status": true,
-            "display_status": true,
-            "branch_max_length": 50,
             "branch_icon": "",
             "branch_identical_icon": "",
             "branch_ahead_icon": "",
