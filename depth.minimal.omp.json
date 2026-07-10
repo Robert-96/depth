@@ -17,7 +17,7 @@
           "type": "path",
           "style": "plain",
           "foreground": "blue",
-          "properties": {
+          "options": {
             "style": "folder"
           },
           "template": "[{{ .Path }}]"
@@ -26,8 +26,7 @@
           "type": "git",
           "style": "plain",
           "foreground": "magenta",
-          "properties": {
-            "branch_max_length": 50,
+          "options": {
             "branch_icon": "",
             "branch_identical_icon": "",
             "branch_ahead_icon": "",
@@ -43,7 +42,7 @@
           "foreground_templates": [
             "{{ if eq .Code 0 }}green{{else}}red{{ end }}"
           ],
-          "properties": {
+          "options": {
             "always_enabled": true
           },
           "template": " $"
