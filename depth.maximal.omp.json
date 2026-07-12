@@ -21,7 +21,13 @@
 						"style": "agnoster"
 					},
 					"template": "[{{ .Path }}]"
-				},
+				}
+			]
+		},
+		{
+			"type": "prompt",
+			"alignment": "left",
+			"segments": [
 				{
 					"type": "git",
 					"style": "plain",
