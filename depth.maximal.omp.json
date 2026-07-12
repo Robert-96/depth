@@ -26,7 +26,7 @@
 		},
 		{
 			"type": "prompt",
-			"alignment": "left",
+			"alignment": "right",
 			"segments": [
 				{
 					"type": "git",
