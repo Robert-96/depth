@@ -44,6 +44,12 @@
 			"newline": true,
 			"segments": [
 				{
+					"type": "text",
+					"style": "plain",
+					"foreground": "white",
+					"template": "{{ .Shell }} "
+				},
+				{
 					"type": "status",
 					"style": "plain",
 					"foreground": "green",
@@ -53,7 +59,7 @@
 					"options": {
 						"always_enabled": true
 					},
-					"template": "{{ .Shell }} {{ if or (eq .Shell \"pwsh\") (eq .Shell \"powershell\") (eq .Shell \"cmd\") }}>{{ else }}${{ end }}"
+					"template": "{{ if or (eq .Shell \"pwsh\") (eq .Shell \"powershell\") (eq .Shell \"cmd\") }}>{{ else }}${{ end }}"
 				}
 			]
 		}
