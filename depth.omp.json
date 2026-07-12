@@ -4,26 +4,6 @@
   "final_space": true,
   "blocks": [
     {
-      "type": "rprompt",
-      "alignment": "right",
-      "segments": [
-        {
-          "type": "git",
-          "style": "plain",
-          "foreground": "magenta",
-          "options": {
-            "fetch_status": true,
-            "branch_icon": "",
-            "branch_identical_icon": "",
-            "branch_ahead_icon": "",
-            "branch_behind_icon": "",
-            "branch_gone_icon": ""
-          },
-          "template": "{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Added }} <green>ADD</>{{end}}{{ if .Working.Deleted}} <red>DEL</>{{ end }} {{ if .Working.Modified }} <yellow>MOD</>{{ end }}{{ if .Working.Untracked }} <yellow>UNT</>{{ end}}{{ if .Working.Unmerged }} <cyan>UNM</>{{ end }} ({{ .HEAD }})"
-        }
-      ]
-    },
-    {
       "type": "prompt",
       "alignment": "left",
       "segments": [
@@ -52,7 +32,27 @@
           "options": {
             "always_enabled": true
           },
-					"template": " {{ if or (eq .Shell \"pwsh\") (eq .Shell \"powershell\") (eq .Shell \"cmd\") }}>{{ else }}${{ end }}"
+          "template": " {{ if or (eq .Shell \"pwsh\") (eq .Shell \"powershell\") (eq .Shell \"cmd\") }}>{{ else }}${{ end }}"
+        }
+      ]
+    },
+    {
+      "type": "rprompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "magenta",
+          "options": {
+            "fetch_status": true,
+            "branch_icon": "",
+            "branch_identical_icon": "",
+            "branch_ahead_icon": "",
+            "branch_behind_icon": "",
+            "branch_gone_icon": ""
+          },
+          "template": "{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Added }} <green>ADD</>{{end}}{{ if .Working.Deleted}} <red>DEL</>{{ end }} {{ if .Working.Modified }} <yellow>MOD</>{{ end }}{{ if .Working.Untracked }} <yellow>UNT</>{{ end}}{{ if .Working.Unmerged }} <cyan>UNM</>{{ end }} ({{ .HEAD }})"
         }
       ]
     }
