@@ -52,8 +52,8 @@ jobs:
           mkdir -p out
           for theme in "${themes[@]}"; do
             base="${theme%.omp.json}"
-            echo "Rendering ${theme} -> out/${base}.png"
-            oh-my-posh config export image --config "$theme" --output "out/${base}.png"
+            echo "Rendering ${theme} -> out/${base}.svg"
+            oh-my-posh config export image --config "$theme" --output "out/${base}.svg"
           done
 
           ls -lah out
@@ -62,7 +62,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: theme-images
-          path: out/*.png
+          path: out/*.svg
           if-no-files-found: error
 
   render-windows:
@@ -103,7 +103,7 @@ jobs:
           New-Item -ItemType Directory -Path out-windows -Force | Out-Null
           foreach ($theme in $themes) {
             $base = $theme.Name -replace '\.omp\.json$', ''
-            $output = Join-Path "out-windows" ("$base.pwsh.png")
+            $output = Join-Path "out-windows" ("$base.pwsh.svg")
             Write-Host "Rendering $($theme.Name) -> $output"
             oh-my-posh config export image --config $theme.FullName --output $output
           }
@@ -114,7 +114,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: theme-images-windows
-          path: out-windows/*.png
+          path: out-windows/*.svg
           if-no-files-found: error
 
   commit-screenshots:

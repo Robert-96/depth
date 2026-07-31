@@ -65,15 +65,15 @@ Then switch `--config` to a local path.
 
 ### depth
 
-![depth theme screenshot](screenshots/depth.png)
+![depth theme screenshot](screenshots/depth.svg)
 
 ### depth.minimal
 
-![depth minimal theme screenshot](screenshots/depth.minimal.png)
+![depth minimal theme screenshot](screenshots/depth.minimal.svg)
 
 ### depth.maximal
 
-![depth maximal theme screenshot](screenshots/depth.maximal.png)
+![depth maximal theme screenshot](screenshots/depth.maximal.svg)
 
 ## License
 
