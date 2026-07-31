@@ -1,73 +1,73 @@
 {
-	"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-	"version": 4,
-	"final_space": true,
-	"blocks": [
-		{
-			"type": "prompt",
-			"alignment": "left",
-			"segments": [
-				{
-					"type": "python",
-					"style": "plain",
-					"foreground": "yellow",
-					"template": "{{ if .Venv }}{{ \"{\" }}{{ .Venv }} v{{ .Full }}{{ \"}\" }} {{ end }}"
-				},
-				{
-					"type": "path",
-					"style": "plain",
-					"foreground": "blue",
-					"options": {
-						"style": "agnoster"
-					},
-					"template": "[{{ .Path }}]"
-				}
-			]
-		},
-		{
-			"type": "prompt",
-			"alignment": "right",
-			"segments": [
-				{
-					"type": "git",
-					"style": "plain",
-					"foreground": "magenta",
-					"options": {
-						"fetch_status": true,
-						"branch_icon": "",
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 4,
+  "final_space": true,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "yellow",
+          "template": "{{ if .Venv }}{{ \"{\" }}{{ .Venv }} v{{ .Full }}{{ \"}\" }} {{ end }}"
+        },
+        {
+          "type": "path",
+          "style": "plain",
+          "foreground": "blue",
+          "options": {
+            "style": "agnoster"
+          },
+          "template": "[{{ .Path }}]"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "magenta",
+          "options": {
+            "fetch_status": true,
+            "branch_icon": "",
             "branch_identical_icon": "≡",
             "branch_ahead_icon": "↑",
             "branch_behind_icon": "↓",
             "branch_gone_icon": "≢"
-					},
-					"template": "{{ if .Working.Added }} <green>ADD</>{{ end }}{{ if .Working.Deleted }} <red>DEL</>{{ end }}{{ if .Working.Modified }} <yellow>MOD</>{{ end }}{{ if .Working.Untracked }} <lightYellow>UNT</>{{ end }}{{ if .Working.Unmerged }} <cyan>UNM</>{{ end }} ({{ if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ .HEAD }})"
-				}
-			]
-		},
-		{
-			"type": "prompt",
-			"alignment": "left",
-			"newline": true,
-			"segments": [
-				{
-					"type": "text",
-					"style": "plain",
-					"foreground": "white",
-					"template": "{{ .Shell }} "
-				},
-				{
-					"type": "status",
-					"style": "plain",
-					"foreground": "green",
-					"foreground_templates": [
-						"{{ if eq .Code 0 }}green{{else}}red{{ end }}"
-					],
-					"options": {
-						"always_enabled": true
-					},
-					"template": "{{ if or (eq .Shell \"pwsh\") (eq .Shell \"powershell\") (eq .Shell \"cmd\") }}>{{ else }}${{ end }}"
-				}
-			]
-		}
-	]
+          },
+          "template": "{{ if .Working.Added }} <green>ADD</>{{ end }}{{ if .Working.Deleted }} <red>DEL</>{{ end }}{{ if .Working.Modified }} <yellow>MOD</>{{ end }}{{ if .Working.Untracked }} <lightYellow>UNT</>{{ end }}{{ if .Working.Unmerged }} <cyan>UNM</>{{ end }} ({{ if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ .HEAD }})"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "white",
+          "template": "{{ .Shell }} "
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "green",
+          "foreground_templates": [
+            "{{ if eq .Code 0 }}green{{else}}red{{ end }}"
+          ],
+          "options": {
+            "always_enabled": true
+          },
+          "template": "{{ if or (eq .Shell \"pwsh\") (eq .Shell \"powershell\") (eq .Shell \"cmd\") }}>{{ else }}${{ end }}"
+        }
+      ]
+    }
+  ]
 }
