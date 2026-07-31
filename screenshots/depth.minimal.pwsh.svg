@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1187.94" height="125.72" viewBox="0 0 1187.94 125.72" font-family="&quot;CaskaydiaCove Nerd Font Mono&quot;, &quot;FiraCode Nerd Font Mono&quot;, &quot;Hack Nerd Font Mono&quot;, &quot;CaskaydiaCove Nerd Font&quot;, &quot;FiraCode Nerd Font&quot;, &quot;Hack Nerd Font&quot;, ui-monospace, monospace" font-size="16px">
+<path class="omp-window-header" fill="#2b2b2b" d="M 4,0 H 1183.94 A 4,4 0 0 1 1187.94,4 V 26.67 H 0 V 4 A 4,4 0 0 1 4,0 Z"/>
+<path class="omp-window-content" fill="#151515" d="M 0,26.67 H 1187.94 V 121.72 A 4,4 0 0 1 1183.94,125.72 H 4 A 4,4 0 0 1 0,121.72 Z"/>
+<rect class="omp-window" x="0.5" y="0.5" width="1186.94" height="124.72" rx="4" fill="none" stroke="#404040" stroke-width="1"/>
+<text xml:space="preserve" class="omp-window-control" x="1110.6" y="18.47" font-size="14.67px" fill="#cfcfcf" text-anchor="middle">−</text>
+<text xml:space="preserve" class="omp-window-control" x="1141.27" y="18.47" font-size="14.67px" fill="#cfcfcf" text-anchor="middle">▢</text>
+<text xml:space="preserve" class="omp-window-control" x="1171.94" y="18.47" font-size="14.67px" fill="#cfcfcf" text-anchor="middle">×</text>
+<text xml:space="preserve" x="16" y="59.43" textLength="105.96" lengthAdjust="spacingAndGlyphs" fill="#ffc706">{.my-venv} </text>
+<text xml:space="preserve" x="121.96" y="59.43" textLength="67.43" lengthAdjust="spacingAndGlyphs" fill="#006fb8">[depth]</text>
+<text xml:space="preserve" x="189.39" y="59.43" textLength="67.43" lengthAdjust="spacingAndGlyphs" fill="#762671"> (main)</text>
+<text xml:space="preserve" x="256.82" y="59.43" textLength="19.27" lengthAdjust="spacingAndGlyphs" fill="#39b54a"> $</text>
+<text xml:space="preserve" x="276.09" y="59.43" textLength="9.63" lengthAdjust="spacingAndGlyphs" fill="#39b54a"> </text>
+<text xml:space="preserve" x="285.72" y="59.43" textLength="9.63" lengthAdjust="spacingAndGlyphs" fill="#ffffff">_</text>
+<text xml:space="preserve" x="16" y="104.13" textLength="115.59" lengthAdjust="spacingAndGlyphs" fill="#ffffff" font-weight="bold">ohmyposh.dev</text>
+</svg>
