@@ -35,10 +35,10 @@
 					"options": {
 						"fetch_status": true,
 						"branch_icon": "",
-						"branch_identical_icon": "",
-						"branch_ahead_icon": ">",
-						"branch_behind_icon": "<",
-						"branch_gone_icon": ""
+            "branch_identical_icon": "≡",
+            "branch_ahead_icon": "↑",
+            "branch_behind_icon": "↓",
+            "branch_gone_icon": "≢"
 					},
 					"template": "{{ if .Working.Added }} <green>ADD</>{{ end }}{{ if .Working.Deleted }} <red>DEL</>{{ end }}{{ if .Working.Modified }} <yellow>MOD</>{{ end }}{{ if .Working.Untracked }} <lightYellow>UNT</>{{ end }}{{ if .Working.Unmerged }} <cyan>UNM</>{{ end }} ({{ if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ .HEAD }})"
 				}
